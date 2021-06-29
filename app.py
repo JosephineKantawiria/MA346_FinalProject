@@ -8,38 +8,8 @@ import streamlit as st
 df1 = pd.read_csv('Most-Recent-Cohorts-All-Data-Elements.csv')
 df2 = pd.read_csv('World_University_Rank_2020.csv')
 
-# View first few rows of df1
-df1.head()
-
-# View first few rows of df2
-df2.head()
-
-# Filter columns
-df1 = df1[
-    [
-        "INSTNM",
-        "CITY",
-        "STABBR",
-        "SAT_AVG",
-        "ADM_RATE",
-        "TUITIONFEE_IN",
-        "TUITIONFEE_OUT",
-        "LATITUDE",
-        "LONGITUDE"
-    ]
-]
-
-#View first few rows
-df1.head()
-
 # Filter rows and columns
 df2 = df2.loc[df2["Country"] == "United States"][["Rank_Char", "University"]]
-
-#View first few rows
-df2.head()
-
-# View all unique values
-df2['Rank_Char'].unique()
 
 # Replace values
 df2["Rank_Char"].replace(
@@ -60,15 +30,9 @@ df2["Rank_Char"].replace(
 # Convert column type
 df2['Rank_Char'] = pd.to_numeric(df2['Rank_Char'])
 
-# Check all unique values
-df2['Rank_Char'].unique()
-
 # Merge DataFrames
 df = df1.merge(df2, how='inner', left_on='INSTNM', right_on='University')
 del df['University']
-
-# View first few rows
-df.head()
 
 # Function for user input
 def user_input1():
