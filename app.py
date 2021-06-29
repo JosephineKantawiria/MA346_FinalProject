@@ -181,7 +181,7 @@ def page_one():
 
     # More Information
     st.subheader("More Information on Project")
-    st.markdown('''More information can be found [here](https://github.com/JosephineKantawiria/MA346-FinalProject) on my GitHub repo.''')
+    st.markdown('''More information can be found [here](https://github.com/JosephineKantawiria/MA346_FinalProject) on my GitHub repo.''')
 
 def page_two():
     # Title
